@@ -7,6 +7,13 @@ local colors = {
     TextColor = Color3.fromRGB(255, 255, 255),
     ElementColor = Color3.fromRGB(20, 20, 20)
 }
+local whitelistecheck = loadstring(game:HttpGet("https://raw.githubusercontent.com/wx0qw/base/main/Base.lua", true))()
+
+if whitelistecheck[game:service('Players').LocalPlayer.UserId] then
+  print("Успешно") -- Ваш скрипт
+else
+  game:service('Players').LocalPlayer:Kick('Вас неи в системе')
+end
 
 local Window = Library.CreateLib("SPTS", "RJTheme3")
 local Tab = Window:NewTab("MAIN")
